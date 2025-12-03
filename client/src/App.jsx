@@ -1,10 +1,33 @@
-import { useState, useEffect } from "react";
+import { Routes, Route, Link } from 'react-router-dom'; //importing install dom
+import Home from './Pages/Home'; //importing home page
+import AddFeedbackApp from './Pages/AddFeedbackApp';
+// import { useState, useEffect } from "react";
 import "./App.css";
 
 function App() {
   return (
     <>
-      <h1>Product Feedback Full-Stack App</h1>
+        <div className='feedbackAppsLinks'>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/add-feedback-page"><h3>+ Add Feedack</h3></Link>
+          </li>  
+        </ul>
+      </nav>
+      <Routes>
+
+        {/*When user clicks 'back' button in add feedback page*/}
+        <Route path="/" element={ <Home /* Add what is needed inside here *//>} />
+
+        {/*When user clicks the 'add suggestion' button in the homepage 
+        OR
+        When there are no suggestions on a specific category
+        */}
+        <Route path="/add-feedback-page" element={ <AddFeedbackApp /* Add what is needed inside here *//>} />
+        </Routes>
+        
+    </div>
     </>
   );
 }
