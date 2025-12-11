@@ -47,7 +47,7 @@ async function getSuggestionsByCategory(category) {
 //Helps the endpoint to add a suggestion
 async function addOneSuggestion(feedback_title, category, feedback_detail) {
     const data = await db.query("INSERT INTO suggestions (feedback_title, category, feedback_detail) VALUES ($1, $2, $3) RETURNING *", [feedback_title, category, feedback_detail]);
-    return data.rows;
+    return data.rows[0];
 }
 
 /*----------------------------------
@@ -61,9 +61,10 @@ app.get("/get-all-suggestions", async (req, res) => {
 });
 
 //Updates the page for the user to show the type of category the user decides they want to see
-app.get("/get-suggestions-by-category", async (req, res) => {
-    const category = await getSuggestionsByCategory(category);
-    res.json(category);
+app.get("/get-suggestions-by-category/:category", async (req, res) => {
+    const { category } = req.params;  
+    const theCategory = await getSuggestionsByCategory(category);
+    res.json(theCategory);
 });
 
 //Adds one suggestion a user writes
