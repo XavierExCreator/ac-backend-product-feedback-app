@@ -28,16 +28,23 @@ app.listen(port, () => {
 /*----------------------------------
 Helper Functions
 ----------------------------------*/
+/*
+These helper functions are all dynamically made and use an async and await feature in order for the function to not progress further unless the db.query has been collected and placed into the 'data' variable for its value
+*/
+
+//Helps the endpoint get all suggestions
 async function getAllSuggestions() {
     const data = await db.query("SELECT * FROM suggestions");
     return data.rows;
 }
 
+//Helps the endpoint get suggestions by category
 async function getSuggestionsByCategory(category) {
     const data = await db.query("SELECT * FROM suggestions WHERE category = ($1)", [category]);
     return data.rows;
 }
 
+//Helps the endpoint to add a suggestion
 async function addOneSuggestion(feedback_title, category, feedback_detail) {
     const data = await db.query("INSERT INTO suggestions (feedback_title, category, feedback_detail) VALUES ($1, $2, $3) RETURNING *", [feedback_title, category, feedback_detail]);
     return data.rows;
@@ -47,25 +54,19 @@ async function addOneSuggestion(feedback_title, category, feedback_detail) {
 API Endpoints
 ----------------------------------*/
 
-//Check for completion also check on Postman
-//Is this completed?
-//
+//Gets all suggestions the user wants to see/the homescreen start shows all
 app.get("/get-all-suggestions", async (req, res) => {
     const suggestions = await getAllSuggestions();
     res.json(suggestions);
 });
 
-//Check for completion also check on Postman
-//Is this completed?
-//
+//Updates the page for the user to show the type of category the user decides they want to see
 app.get("/get-suggestions-by-category", async (req, res) => {
     const category = await getSuggestionsByCategory(category);
     res.json(category);
 });
 
-//Check for completion also check on Postman
-//Is this completed?
-//
+//Adds one suggestion a user writes
 app.post("/add-one-suggestion", async (req, res) => {
     const { feedback_title, category, feedback_detail } = req.body;
     const newSuggestion = await addOneSuggestion(feedback_title, category, feedback_detail);
