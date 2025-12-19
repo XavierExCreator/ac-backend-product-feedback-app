@@ -38,7 +38,6 @@ export default function AddFeedbackApp() {
       };
 
       async function storeUsersSuggestion() { 
-          //  When we call the fetch() function, we only need to pass in the API url as one parameter when it’s a GET request.
           //  When it’s a POST request we need to pass a second parameter: an Object
         await fetch ('/api/add-one-suggestion', {
           /*
@@ -55,7 +54,7 @@ export default function AddFeedbackApp() {
           /*
            -This data needs to be stringified into a string in order for it to be stored
            -We're stringifying the form version of this data.
-           -We're stringifying the name, email, country and bio
+           -We're stringifying the feedback_title, category and feedback_detail
            -Some of my names/id's don't match the API's names for some objects which will cause errors, what this does is that it makes the stringified form understand how the code is 
           */
           body: JSON.stringify({
@@ -64,6 +63,7 @@ export default function AddFeedbackApp() {
             feedback_detail: formData.feedback_detail,
           })
         })
+        console.log(formData);
       }
 
     return(
