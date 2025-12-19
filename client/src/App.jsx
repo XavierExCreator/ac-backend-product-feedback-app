@@ -8,13 +8,6 @@ function App() {
   return (
     <>
         <div className='feedbackAppsLinks'>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/add-feedback-page"><h3>+ Add Feedack</h3></Link>
-          </li>  
-        </ul>
-      </nav>
       <Routes>
 
         {/*When user clicks 'back' button in add feedback page*/}

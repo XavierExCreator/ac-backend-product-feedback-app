@@ -1,6 +1,5 @@
 import feedbackStyles from '../Pages/AddFeedbackApp.module.css'; //importing a css module for AddFeedbackApp buttons 
 import homeStyles from '../Pages/Home.module.css'; //importing a css module for AddFeedbackApp buttons 
-
 export default function Button({onClick, buttonName, variant}) {
 
 
