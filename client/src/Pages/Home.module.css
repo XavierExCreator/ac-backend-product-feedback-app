@@ -22,7 +22,7 @@ h3 {
     width: 400px;
     height: 200px;
     background-size: cover;
-    background-image:url("/Users/xaviera/Documents/DEV/ac-backend-product-feedback-app/client/src/assets/suggestions/desktop/background-header.png");
+    background-image:url("../assets/suggestions/desktop/background-header.png");
     background-repeat: no-repeat;
     color: #ffffff;
     border-radius: 10px;
