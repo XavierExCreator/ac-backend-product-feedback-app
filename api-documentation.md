@@ -8,6 +8,8 @@ Base URL: `http://localhost:3000`
 | ------------- | ------ | ---------------------------- | ---------------------------------------------------------------------------------------------- |
 | `suggestions` | GET    | /get-all-suggestions         | This has the url show all the suggestions when the user clicks on a specific button            |
 | `suggestions` | GET    | /get-suggestions-by-category | When the user clicks a button to view specific categories this url shows it                    |
+| `suggestions` | GET    | /count-all-categories        | This counts all the categories total                                                           |
+| `suggestions` | GET    | /count/:specific/catgeory    | This only counts a specific category the user wants to see for suggesitons                     |
 | `suggestions` | POST   | /add-one-suggestion          | When the user wants to add a suggestion, it posts the request body in order to save in the api |
 
 ---
@@ -82,6 +84,42 @@ http://localhost:3000/get-suggestions-by-category/UI
     "feedback_detail": "You should add a loading screen for when the information isnt there yet- I get really confused that my site is glitching out"
   }
 ]
+```
+
+---
+
+### 🔹 GET `/count-all-categorie`
+
+**Description:** Shows all of the suggestions added by users
+
+**Example Request URL:**
+
+```[link]
+http://localhost:3000/count-all-categorie
+```
+
+**Example Response:**
+
+```json
+
+```
+
+---
+
+### 🔹 GET `/count/:specific/catgeory`
+
+**Description:** Shows a specific count toal for the category
+
+**Example Request URL:**
+
+```[link]
+http://localhost:3000/count/:specific/catgeory
+```
+
+**Example Response:**
+
+```json
+
 ```
 
 ---

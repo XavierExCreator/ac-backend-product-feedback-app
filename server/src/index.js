@@ -9,7 +9,6 @@ Boilerplate Code to Set Up Server
 ----------------------------------*/
 import express from "express";
 import pg from "pg";
-import config from "./config.js";
 
 const db = new pg.Pool({
     connectionString: config.databaseUrl, //credential to access the database. Keep this part private in the gitignore file section
