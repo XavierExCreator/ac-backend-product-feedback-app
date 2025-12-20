@@ -11,7 +11,7 @@ import express from "express";
 import pg from "pg";
 
 const db = new pg.Pool({
-    connectionString: config.databaseUrl, //credential to access the database. Keep this part private in the gitignore file section
+    connectionString: process.env.DATABASE_URL, //credential to access the database. Keep this part private in the gitignore file section
     ssl: true //use SSL encryption when connecting to the database
     });
 
