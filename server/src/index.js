@@ -50,6 +50,18 @@ async function addOneSuggestion(feedback_title, category, feedback_detail) {
     return data.rows[0];
 }
 
+//Helps the endpoint to find all the counts
+async function countEveryCategory() {
+    const data = await db.query("SELECT COUNT(*) AS all_categories_counted FROM suggestions")
+    return data.rows;
+}
+
+//Helps the endpoint to find the count for specific categories
+async function countSpecificCategory(category) {
+    const data = await db.query("SELECT COUNT(*) AS category_count FROM suggestions WHERE category = ($1)", [category]);
+    return data.rows[0];
+}
+
 /*----------------------------------
 API Endpoints
 ----------------------------------*/
@@ -72,4 +84,15 @@ app.post("/add-one-suggestion", async (req, res) => {
     const { feedback_title, category, feedback_detail } = req.body;
     const newSuggestion = await addOneSuggestion(feedback_title, category, feedback_detail);
     res.json(newSuggestion);
+});
+
+app.get("/count-all-categories", async (req, res) => {
+    const totalCategories = await countEveryCategory();
+    res.json(totalCategories);
+});
+
+app.get("/count/:specific/catgeory", async (req, res) => {
+    const { specific } = req.params;  
+    const specificCategory = await countSpecificCategory(specific);
+    res.json(specificCategory);
 });
