@@ -69,18 +69,13 @@ export default function AddFeedbackApp() {
     return(
         <>
         <div className={styles.div}>
-            <div> <img src={backArrow} alt="Image of a purplish circle with a white plus symbol in the middle" className={styles.backArrow} /> <Link to={`/`} style={{display: 'inline-block', gap: '1rem', color:"#647196", fontSize:".85rem", fontWeight:"bold"} }> Go Back</Link></div>
+            <div style={{alignItems:'left'}}> <img src={backArrow} alt="Image of a purplish circle with a white plus symbol in the middle" className={styles.backArrow} /> <Link to={`/`} style={{display: 'inline-block', gap: '1rem', color:"#647196", fontSize:".85rem", fontWeight:"bold"}}> Go Back</Link></div>
 
-        {/*
-          There'll be a form here with an icon on the outside of the form-
-
-          The form will have teo buttons, one that goes to the homescreen and the other that posts the information to the api
-        */}
         <img src={feedbackIcon} alt="Image of a purplish circle with a white plus symbol in the middle" className={styles.feedbackIcon} width="60px" height="60px"/>
 
         <div className={styles.form}>
         <legend>
-        <h2>Create New Feedback</h2>
+        <h2 style={{color:'#3a4374', fontWeight:'bold', padding:'0rem'}}>Create New Feedback</h2>
     <form className={styles.feedback_Form} onSubmit={storeUsersSuggestion}>
         <label htmlFor='feedback_title'><span style={{fontWeight:"bold", color:"#3a4374"}}>Feedback Title</span><br/>
         <span>Add a short, descriptive headline</span>
@@ -112,11 +107,13 @@ export default function AddFeedbackApp() {
         <span style={{fontWeight:"bold", color:"#3a4374"}}>Feedback Detail</span><br/>
         <span>Include any specific comments on what should be improved, added, etc.</span>
         <br/>
-        <textarea style={{paddingTop: '5rem', paddingBottom: '5rem'}} value={formData.feedback_detail} onChange={handleChange} name='feedback_detail'></textarea></label><br/>
+        <textarea style={{paddingBottom: '5rem'}} value={formData.feedback_detail} onChange={handleChange} name='feedback_detail'></textarea></label><br/>
 
+        <div className={styles.button}>
         <Button buttonName={<Link to={`/`} style={{display: 'inline-block', gap: '1rem'} }>Cancel</Link>} variant={styles.cancelButton}/>
 
         <button type='submit' className={styles.submitButton} style={{backgroundColor:'#ad1fea'}}>Submit Feedback</button>
+        </div>
     </form>
     </legend>
         </div>

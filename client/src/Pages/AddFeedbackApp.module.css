@@ -4,16 +4,15 @@ body {
 }
 
 .div {
-    display:flex; 
-    justify-content: center;
-    flex-flow: column;
-    /* margin: 5rem auto; */
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 550px;
 }
 .form {
     border-radius: 1pc;
     display:flex; 
     background-color: white;
-    max-width: 30rem;
     padding:2rem;
     justify-content: center;
     align-items: center;
@@ -50,10 +49,6 @@ input[type=text], select {
     height: 3pc;
 }
 
-textarea {
-    height: 1px;
-}
-
 button {
     display: flex;
     flex-flow: row;
@@ -75,3 +70,9 @@ a {
 input:hover {
     border: solid, .1rem,#4661e6;
 }
+
+.button {
+    display: flex;
+    justify-content: flex-end;
+}
+

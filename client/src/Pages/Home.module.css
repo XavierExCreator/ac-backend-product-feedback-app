@@ -1,0 +1,112 @@
+.mainBody {
+    display: flex;
+    justify-content: center;
+    flex-flow: row;
+    gap: 2rem;
+    max-width: 1400px;
+}
+
+
+h3 {
+    background-color: #ad1fea;
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    font-size: 1rem;
+}
+
+.companyBoard {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 400px;
+    height: 200px;
+    background-size: cover;
+    background-image:url("/Users/xaviera/Documents/DEV/ac-backend-product-feedback-app/client/src/assets/suggestions/desktop/background-header.png");
+    background-repeat: no-repeat;
+    color: #ffffff;
+    border-radius: 10px;
+    display:inline-block;
+    padding: 1rem;
+    align-content: end;
+    max-width: 330px;
+}
+
+h2 {
+    font-weight:normal;
+    color: #e1d4fc;
+    font-size: 1.5rem;
+}
+
+h1 {
+    margin-bottom: -1rem;
+}
+h1, h2 {
+    padding-left: 1rem;
+}
+
+.feedbackSuggestionsBar { 
+    display: flex;
+    background-color: #373f68;
+    color: #ffffff;
+    font-weight: bold;
+    flex-flow: row;
+    justify-content:space-between;
+    padding:2rem;
+    border-radius: 10px;
+    height: 50px;
+}
+
+.feedbackButton {
+    background-color:#f2f4ff;
+}
+
+.lightbulb {
+    gap: 1rem;
+}
+
+.cardHolder {
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 3rem;
+    width: 800px;
+}
+
+.cards {
+    background-color: #fff;
+    text-align: left;
+    padding: 1rem 5rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+.suggestionAndFeedback {
+    width: 800px;
+}
+
+.buttonHolder {
+    margin-top: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.1rem;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    font-size: .65rem;
+    max-width: 300px;
+}
+
+.filterCategoryButton, .getAllsuggestionsButton {
+    background-color: #f2f4ff;
+    color: #4661e6;
+}
+
+.filterCategoryButton:hover, .getAllsuggestionsButton:hover {
+    background-color: #4661e6;
+    color: #f2f4ff;
+}
+
+.detective {
+    color: #3a4374;
+    font-weight: bold;
+}
