@@ -88,20 +88,24 @@ http://localhost:3000/get-suggestions-by-category/UI
 
 ---
 
-### 🔹 GET `/count-all-categorie`
+### 🔹 GET `/count-all-categories`
 
-**Description:** Shows all of the suggestions added by users
+**Description:** Shows all of the suggestions total as a count
 
 **Example Request URL:**
 
 ```[link]
-http://localhost:3000/count-all-categorie
+http://localhost:3000/count-all-categories
 ```
 
 **Example Response:**
 
 ```json
-
+[
+  {
+    "all_categories_counted": "5"
+  }
+]
 ```
 
 ---
@@ -119,7 +123,9 @@ http://localhost:3000/count/:specific/catgeory
 **Example Response:**
 
 ```json
-
+{
+  "category_count": "2"
+}
 ```
 
 ---
